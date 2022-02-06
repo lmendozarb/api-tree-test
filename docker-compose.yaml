@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: auth-service:lastest
+    container_name: auth-service
+    command: poetry run uvicorn main:app --host 0.0.0.0 --port 9001 --reload
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - .:/code:z
+    ports:
+      - "9001:9001"
+    networks:
+      - project-network
+
+networks:
+  project-network:
+    name: auth-service-network

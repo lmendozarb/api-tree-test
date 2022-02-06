@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "code"
+version = "0.1.0"
+description = ""
+authors = ["Carlo Alva <v-calva@trueaccord.com@trueaccord.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.73.0"
+uvicorn = {version = "^0.17.4", extras = ["standar"]}
+pydantic = {version = "^1.9.0", extras = ["dotenv"]}
+requests = "^2.27.1"
+networkx = "^2.6.3"
+matplotlib = "^3.5.1"
+numpy = "^1.22.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
